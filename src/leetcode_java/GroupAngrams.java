@@ -8,8 +8,8 @@ import java.util.*;
  */
 public class GroupAngrams {
     public List<List<String>> groupAnagrams(String[] strs) {
-         List<List<String>>res = new ArrayList<>();
-         if(strs == null)return res;
+        List<List<String>>res = new ArrayList<>();
+        if(strs == null)return res;
         Map<String, List<String>> map = new HashMap<>();
         for(String s:strs) {
             char[] sarr = s.toCharArray();

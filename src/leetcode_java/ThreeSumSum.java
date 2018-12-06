@@ -68,15 +68,17 @@ public class ThreeSumSum {
         return res;
     }
     public static void main(String args[]) {
-        ThreeSumSum threeSum = new ThreeSumSum();
-        int data[] = {-1, 0, 1, 2, -1, -4};
-        List<List<Integer>>res = threeSum.threeSum(data);
-        for(int i  = 0; i < res.size(); i++) {
-            for(int j = 0;j <res.get(i).size(); j++) {
-                System.out.print(res.get(i).get(j)+ " ");
-            }
-            System.out.print('\n');
-
-        }
+//        ThreeSumSum threeSum = new ThreeSumSum();
+//        int data[] = {-1, 0, 1, 2, -1, -4};
+//        List<List<Integer>>res = threeSum.threeSum(data);
+//        for(int i  = 0; i < res.size(); i++) {
+//            for(int j = 0;j <res.get(i).size(); j++) {
+//                System.out.print(res.get(i).get(j)+ " ");
+//            }
+//            System.out.print('\n');
+//
+//        }
+        String s = "abcdefg";
+        System.out.print(s.substring(1,2));
     }
 }
