@@ -15,7 +15,6 @@ var maximumGap = function(nums) {
             maxDefference = res[i+1] - res[i];
         }
     }
-    console.log(maxDefference);
 };
 
 let bucketSorted = function(nums, maxValue){
