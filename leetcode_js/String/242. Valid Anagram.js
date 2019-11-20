@@ -16,7 +16,7 @@ var isAnagram = function(s, t) {
     
     for(let i = 0; i < t.length; i++) {
         table[t.charCodeAt(i) - 'a'.charCodeAt(0)]-=1;
-        if (table[t.charCodeAt(i) - 'a'.charCodeAt(0)]) {
+        if (table[t.charCodeAt(i) - 'a'.charCodeAt(0)] < 0) {
             return false;
         }
     }
@@ -24,4 +24,4 @@ var isAnagram = function(s, t) {
     return true;
 };
 
-isAnagram("anagram", "nagaram")
+isAnagram("anagram", "nagaram");
