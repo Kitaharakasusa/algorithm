@@ -4,31 +4,30 @@
  * @return {boolean}
  */
 var wordPattern = function(pattern, str) {
-    if(pattern === str) return true;
+    let map = {};
+    let words = str.split(" ");
+    let patt = pattern.split("");
+    let container = [];
 
-    let patternMap = {}, strMap = {};
-    for(let i = 0; i < pattern.length; i++) {
-        if(patternMap.hasOwnProperty(pattern[i])){
-            patternMap[pattern[i]] += 1;
+    if(words.length !== patt.length) return false;
+
+    for(let i = 0; i < patt.length; i++) {
+        if(map.hasOwnProperty(patt[i])) {
+            if(map[patt[i]]!==words[i]) {
+                return false;
+            }else {
+                continue;
+            }
         }else {
-            patternMap[pattern[i]] = 1;   
+            if(!container.some(item => {return item === words[i];})) {
+                map[patt[i]] = words[i];
+                container.push(words[i])
+            }else {
+                return false;
+            }
         }
     }
-    let strArr = str.split(' ');
-    
-    for(let i = 0; i < strArr.length; i++) {
-        if(strMap.hasOwnProperty(strArr[i])){
-            strMap[strArr[i]] += 1;
-        }else {
-            strMap[strArr[i]] = 1;   
-        }
-    }
-    console.log(strMap);
-    console.log(patternMap);
 
-    for(let i = 0; i < strArr.length; i++) {
-        if(strMap[strArr[i]] !== patternMap[pattern[i]]) return false; 
-    }
     return true;
 
 };
